@@ -1,105 +1,68 @@
-<HTML>
+<html>
 
- <HEAD>
+ <head>
 
-	<SCRIPT type="text/javascript">
-		 (function(a_,i_,r_,_b,_r,_i,_d,_g,_e){if(!a_[_b]){var d={queue:[]};_r.concat(_i).forEach(function(a){var i_=a.split("."),a_=i_.pop();i_.reduce(function(a,i_){return a[i_]=a[i_]||{}},d)[a_]=function(){d.queue.push([a,arguments])}});a_[_b]=d;a_=i_.getElementsByTagName(r_)[0];i_=i_.createElement(r_);i_.onerror=function(){d.queue.filter(function(a){return 0<=_i.indexOf(a[0])}).forEach(function(a){a=a[1];a=a[a.length-1];"function"===typeof a&&a("error occur when load airbridge")})};i_.async=1;i_.src="//static.airbridge.io/sdk/latest/airbridge.min.js";a_.parentNode.insertBefore(i_,a_)}})(window,document,"script","airbridge","init fetchResource setBanner setDownload setDownloads openDeeplink setDeeplinks sendWeb setUserAgent setUserAlias addUserAlias setMobileAppData setUserId setUserEmail setUserPhone setUserAttributes clearUser setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent".split(" "),["events.wait"]);
+    <script type="text/javascript">
+         (function(a_,i_,r_,_b,_r,_i,_d,_g,_e){if(!a_[_b]){var d={queue:[]};_r.concat(_i).forEach(function(a){var i_=a.split("."),a_=i_.pop();i_.reduce(function(a,i_){return a[i_]=a[i_]||{}},d)[a_]=function(){d.queue.push([a,arguments])}});a_[_b]=d;a_=i_.getElementsByTagName(r_)[0];i_=i_.createElement(r_);i_.onerror=function(){d.queue.filter(function(a){return 0<=_i.indexOf(a[0])}).forEach(function(a){a=a[1];a=a[a.length-1];"function"===typeof a&&a("error occur when load airbridge")})};i_.async=1;i_.src="//static.airbridge.io/sdk/latest/airbridge.min.js";a_.parentNode.insertBefore(i_,a_)}})(window,document,"script","airbridge","init fetchResource setBanner setDownload setDownloads openDeeplink setDeeplinks sendWeb setUserAgent setUserAlias addUserAlias setMobileAppData setUserId setUserEmail setUserPhone setUserAttributes clearUser setDeviceIFV setDeviceIFA setDeviceGAID events.send events.signIn events.signUp events.signOut events.purchased events.addedToCart events.productDetailsViewEvent events.homeViewEvent events.productListViewEvent events.searchResultViewEvent".split(" "),["events.wait"]);
 
-			airbridge.init({
-		        app: 'ablog',
-		        appToken: '8ec37a00b37a4576a7f8bdf8d5164dd5',
-		        userHash: true,
-		        defaultParams: {
-		            'medium': 'sms',
-		            'campaign': '20180307-websdk-qa'
-		        },
-		        utmParsing: true,
-		        urlQueryMapping: {
-		            'channel': 'test_channel',
-		            'campaign': 'test_campaign'
-		        },
-		        useProtectedAttributionWindow: true,
-		        cookieWindowInMinutes: 120,
-		        sessionTimeout: 15000,
-		    }, function (err, res) {
-		        console.log(err);
-		    }); 
-	</SCRIPT>
+            airbridge.init({
+                app: 'ablog',
+                appToken: '8ec37a00b37a4576a7f8bdf8d5164dd5',
+                userHash: true,
+                defaultParams: {
+                    'medium': 'sms',
+                    'campaign': '20180307-websdk-qa'
+                },
+                utmParsing: true,
+                urlQueryMapping: {
+                    'channel': 'test_channel',
+                    'campaign': 'test_campaign'
+                },
+                useProtectedAttributionWindow: true,
+                cookieWindowInMinutes: 120,
+                sessionTimeout: 15000,
+            }, function (err, res) {
+                console.log(err);
+            }); 
+    </script>
 
-	<STYLE>
+    <style>
 
-		body {
-		    background-color: #00BCD4;
-		}
-		h1 {
-		    color: #fff;
-		}
-		p {
-		    color: #fff;
-		}
-	 
-	</STYLE>
+        body {
+            background-color: #00BCD4;
+        }
+        h3 {
+            color: #fff;
+        }
+        p {
+            color: #fff;
+        }
+     
+    </style>
  
-	<TITLE> Testing Local Web Page in Flutter WebView </TITLE>
-	<META name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Testing Local Web Page in Flutter WebView </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
  
-</HEAD>
+</head>
  
-<BODY>
+<body>
  
-    <H1> THIS IS SAMPLE flutter_inappwebview plugin </H1>
+    <h3> flutter_inappwebview plugin. </h3>
+    <h3> airbridge web sdk. </h3>
 
-    <P></P>
+    <p></p>
 
-    <INPUT type="button" value="WebToken" onclick="getWebToken()">
-    <INPUT type="button" value="JsonSchemaVersion" onclick="getJsonSchemaVersion()">
-    <INPUT type="button" value="SdkVersion" onclick="getSdkVersion()">
+    <input type="button" value="WebToken" onclick="getWebToken()">
+    <input type="button" value="JsonSchemaVersion" onclick="getJsonSchemaVersion()">
+    <input type="button" value="SdkVersion" onclick="getSdkVersion()">
     
-    <P></P>
+    <p></p>
     
-    <INPUT type="button" value="setUser" onclick="setUser()">
-    <INPUT type="button" value="clearUser" onclick="clearUser()">
-    <INPUT type="button" value="trackEvent" onclick="trackEvent()">
+    <input type="button" value="setUser" onclick="setUser()">
+    <input type="button" value="clearUser" onclick="clearUser()">
+    <input type="button" value="trackEvent" onclick="trackEvent()">
 
-    <P></P>
-    
-    <INPUT type="button" value="sendCustomEvent" onclick="sendCustomEvent()">
-
-<SCRIPT type="text/javascript">
-
-    function sendCustomEvent() {
-        airbridge.events.send('hybrid.category', {
-            action: 'hybrid.action',
-            label: 'hybrid.label',
-            value: 100,
-            customAttributes: {
-                custom1: 'first value',
-                custom2: 'second value',
-            },
-            semanticAttributes: {
-                productListID: 'test productListID',
-                transactionID: 'test transactionID',
-                cartID: 'test cartID',
-                inAppPurchased: true,
-                totalValue: 15000,
-                currency: 'test currency',
-                query: 'test query',
-                products: [{
-                    productID: '1',
-                    name: 'MacBook Pro',
-                    price: 1548200,
-                    currency: 'KRW',
-                    position: 1
-                }, {
-                    productID: '2',
-                    name: 'MacBook Air',
-                    price: 1500000,
-                    currency: 'KRW',
-                    position: 2,
-                }]
-            }
-        });
-    }
+<script type="text/javascript">
 
     function getWebToken() {
         console.log('getWebToken: ' + AirbridgeNative.getWebToken());
@@ -114,7 +77,12 @@
     }
 
     function setUser() {
-        AirbridgeNative.setUser('{"name": "hong", "age": 40}');
+        AirbridgeNative.setUser(
+            JSON.stringify({
+                name: "hong",
+                age: 40
+            })
+        );
     }
 
     function clearUser() {
@@ -122,10 +90,43 @@
     }
 
     function trackEvent() {
-        AirbridgeNative.trackEvent('{"category":"custom_web_interface","action":"custom_web_interface action","label":"custom_web_interface label","value":99,"custom_attributes":{"gid":11}}');
+        AirbridgeNative.trackEvent(
+            JSON.stringify({
+                category: 'hybrid.category',
+                action: 'hybrid.action',
+                label: 'hybrid.label',
+                value: 100,
+                custom_attributes: {
+                    custom1: 'first value',
+                    custom2: 'second value',
+                },
+                semantic_attributes: {
+                    productListID: 'test productListID',
+                    transactionID: 'test transactionID',
+                    cartID: 'test cartID',
+                    inAppPurchased: true,
+                    totalValue: 15000,
+                    currency: 'test currency',
+                    query: 'test query',
+                    products: [{
+                        productID: '1',
+                        name: 'MacBook Pro',
+                        price: 1548200,
+                        currency: 'KRW',
+                        position: 1
+                    }, {
+                        productID: '2',
+                        name: 'MacBook Air',
+                        price: 1500000,
+                        currency: 'KRW',
+                        position: 2,
+                    }]
+                }
+            })
+        );
     }
-</SCRIPT>
-</BODY>
+</script>
+</body>
  
  
-</HTML>
+</html>
